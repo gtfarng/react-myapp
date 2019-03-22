@@ -15,7 +15,7 @@ export const getBearsFailed = () => ({ type: 'GET_BEARS_FAILED' });
 export const getBears = () => async (dispatch) => {
   try {
     console.log('get-bear')
-    const response = await axios.get(`http://gtfarng-restful.ddns.net:8003/api/bears`)
+    const response = await axios.get(`http://localhost/api/bears`)
     const responseBody = await response.data;
     console.log('response bear: ', responseBody)
     dispatch(getBearsSuccess(responseBody));

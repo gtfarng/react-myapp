@@ -13,7 +13,7 @@ class Bears extends Component {
         if (this.props.bears) {
             return this.props.bears.map((git, index) => {
                 console.log(git.name)
-                return (<li key={index}> <strong>Name</strong> : {git.name}, <strong>Weight</strong> : {git.weight} Kilograms </li>
+                return (<li key={index}> <strong>{git.id}.Name</strong> : {git.name}, <strong>Weight</strong> : {git.weight} Kilograms </li>
                 )
             })
         }
@@ -21,17 +21,26 @@ class Bears extends Component {
 
 
 
-render() {
-    return (
-        <div style={{ margin: '20px' }}>
-            <h2>Render Bears</h2>
-            <br />
-            {this.renderBears()}
-          
-            <br />
-        </div>
-    );
-}
+    render() {
+        return (
+            <div style={{ margin: '20px' }}>
+                <h2>Render Bears</h2>
+                <br />
+                {this.renderBears()}
+                <br />
+                <input name="id" onChange={this.handleChange} placeholder="Bear ID..." /><br />
+                <input name="name" onChange={this.handleChange} placeholder="Bear Name..." /><br />
+                <input name="weight" onChange={this.handleChange} placeholder="Bear Weight..." /><br />
+                <br />
+                <button onClick={() => this.getBears()}>GET</button>
+                <button onClick={() => this.getBears()}>POST</button>
+                <button onClick={() => this.getBears()}>DELETE</button>
+                <button onClick={() => this.getBears()}>PUT</button>
+
+                <br /><br /><br />
+            </div>
+        );
+    }
 }
 
 const mapStateToProps = ({ bears }) => {

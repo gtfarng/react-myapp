@@ -81,6 +81,8 @@ export default class App extends Component {
       <div className="App">
         <header className="App-header">
           <h1>My_React-APP</h1>
+          <h4>frontend (axios, react-redux, redux, redux-thunk, redux-logger)<br/>
+          backend (express, body-parser, router, cors)</h4>
         </header>
 
         <Provider store={store}>

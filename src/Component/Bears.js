@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { getBears } from './App'
+import { getBears } from '../App'
 import { connect } from 'react-redux'
 
 class Bears extends Component {
@@ -13,7 +13,14 @@ class Bears extends Component {
         if (this.props.bears) {
             return this.props.bears.map((git, index) => {
                 console.log(git.name)
-                return (<li key={index}> <strong>{git.id}.Name</strong> : {git.name}, <strong>Weight</strong> : {git.weight} Kilograms </li>
+                return (<li key={index}> <strong>{git.id}.Name</strong> : {git.name}, <strong>Weight</strong> : {git.weight} Kilograms
+
+               &nbsp; <button onClick={() => this.getBears()}>GET</button>
+                    &nbsp; <button onClick={() => this.getBears()}>DELETE</button>
+                    &nbsp; <button onClick={() => this.getBears()}>PUT</button>
+
+
+                </li>
                 )
             })
         }

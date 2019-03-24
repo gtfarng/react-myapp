@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { getGithub } from './App'
+import { getGithub } from '../App'
 import { connect } from 'react-redux'
 
 class Github extends Component {
@@ -29,11 +29,12 @@ class Github extends Component {
     */
     handleChange = (e) => {
         this.setState({ [e.target.name]: e.target.value });
+        console.log("input:",this.state.user)
     }
 
     renderGithub = () => {
         if (this.props.github) {
-            console.log("github data:", this.props.github)
+            // console.log("github data:", this.props.github)
             return (
                 <ul>
                     <br />
